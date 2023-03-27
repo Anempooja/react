@@ -6,13 +6,13 @@ function  Expenses(props){
     const expenses=props.expenses
 
 return (
-    <Card>
+    <Card className="expenses">
         <div>
         
 {
         expenses.map(item=>{
            
-          return   <ExpenseItem title={`${item.title}`} amount={`${item.amount}`} date={`${item.date}`}  locationOfExpenditure= {`${item.place}`}></ExpenseItem>
+          return   <ExpenseItem title={`${item.title}`} amount={`${item.amount}`} date={`${item.date}`}  locationOfExpenditure= {`${item.place}`} id={`${item.id}`}></ExpenseItem>
         })
        
 }
