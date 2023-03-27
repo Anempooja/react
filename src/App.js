@@ -1,6 +1,7 @@
-import ExpenseItem from "./components/Expenses/ExpenseItem";
+import Expenses from "./Expenses";
+
 const App=()=> {
-  const expenseList=[{
+  const expenses=[{
     title:'food',
     amount:500,
     date:new Date(2022,11,25),
@@ -13,17 +14,12 @@ const App=()=> {
     {
       title:'petrol',
     amount:200,
-    date:new Date(2023,1,21),
+    date:new Date(2023,1,21), 
     place:'z'}]
   return (
     <div>
       <h2>Let's get started!</h2>
-      {
-        expenseList.map(item=>{
-          return   <ExpenseItem title={`${item.title}`} amount={`${item.amount}`} date={`${item.date}`}  locationOfExpenditure= {`${item.place}`}></ExpenseItem>
-        })
-      
-}
+      <Expenses expenses={expenses}> </Expenses>
       
     </div>
   );

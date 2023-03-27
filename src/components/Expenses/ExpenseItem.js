@@ -5,7 +5,7 @@ import ExpenseDetails from './ExpenseDetails'
 const ExpenseItem =(props)=>{    
     return (
         <Card>
-            <ExpenseDate date={props.date}></ExpenseDate>
+            <ExpenseDate date={props.date}></ExpenseDate>      
             <ExpenseDetails title={props.title} amount={props.amount} locationOfExpenditure={props.locationOfExpenditure}></ExpenseDetails>
             
         
