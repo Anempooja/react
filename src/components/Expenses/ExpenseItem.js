@@ -5,15 +5,15 @@ import ExpenseDate from './ExpenseDate'
 import ExpenseDetails from './ExpenseDetails'
 
 const ExpenseItem =(props)=>{  
-    const [title,setTitle]=useState(props.title)
+    const [amount,setTitle]=useState(props.amount)
     const clickHandler=()=>{
-          setTitle('updated')  
+          setTitle(100)  
     }  
     return (
         <Card className="expense-item">
             <ExpenseDate date={props.date}></ExpenseDate>      
-            <ExpenseDetails title={title} amount={props.amount} locationOfExpenditure={props.locationOfExpenditure}></ExpenseDetails>
-            <button  onClick={clickHandler}>change title</button>
+            <ExpenseDetails title={props.title} amount={amount} locationOfExpenditure={props.locationOfExpenditure}></ExpenseDetails>
+            <button  onClick={clickHandler}>change expense</button>
         
         </Card>
     )
