@@ -1,5 +1,5 @@
 import Expenses from "./Expenses";
-
+import NewExpense from "./components/NewExpense/NewExpense";
 const App=()=> {
   const expenses=[{
     id:1,
@@ -21,7 +21,7 @@ const App=()=> {
     place:'z'}]
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense/>
       <Expenses expenses={expenses}> </Expenses>
       
     </div>
