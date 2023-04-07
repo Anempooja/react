@@ -12,7 +12,7 @@ return (
 {
         expenses.map(item=>{
            
-          return   <ExpenseItem title={`${item.title}`} amount={`${item.amount}`} date={`${item.date}`}  locationOfExpenditure= {`${item.place}`} id={`${item.id}`}></ExpenseItem>
+          return   <ExpenseItem  key={`${item.id}`} title={`${item.title}`} amount={`${item.amount}`} date={`${item.date}`}   ></ExpenseItem>
         })
        
 }
