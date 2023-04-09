@@ -18,19 +18,39 @@ const Dummy_Expenses=[{
   date:new Date(2023,1,21)
  }]
 const App=()=> {
-  
-    const [expenses,setExpenses]=useState(Dummy_Expenses)
+  let a=[]
+    let [expenses,setExpenses]=useState(Dummy_Expenses)
     const addExpenseHandler=(expense)=>{
       setExpenses((preExpenses)=>{
         return [expense,...preExpenses]
       })
-      console.log(expenses)
+      
     }
-    console.log(expenses)
+    const [selectedYear,setFilteredYear]=useState('all')
+    const filterYear=(event)=>{
+      setFilteredYear(event.target.value)      
+    }
+    if(selectedYear!=='all'){
+       a=expenses.filter((expense)=>{
+        if(new Date(expense.date).getFullYear()==selectedYear){
+          return expense
+        }
+      })
+    }
+    else a=[...expenses]
   return (
     <div>
+      <label>
+      filtered by year:
+      <select  value={selectedYear}  onChange={filterYear}>
+        <option value="all">All</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+    </label>
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses expenses={expenses}> </Expenses>
+      <Expenses expenses={a}> </Expenses>
       
     </div>
   );
