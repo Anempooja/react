@@ -50,6 +50,8 @@ const App=()=> {
       </select>
     </label>
       <NewExpense onAddExpense={addExpenseHandler}/>
+     { a.length===0 && <p> no expenses present</p>}
+      {a.length===1 && <p> Only single Expense here. Please add more... </p> }
       <Expenses expenses={a}> </Expenses>
       
     </div>
